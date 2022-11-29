@@ -7,6 +7,7 @@
         <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
         <script>
             kaboom();
+            debug.inspect = true;
             loadSprite("Ball","/1st-KboomJS/sprites/ball.png");
             const speed=350;
              const ball = add([
@@ -14,7 +15,8 @@
                 pos(0,0),
                 origin("center"),
                 area(),
-                solid()
+                solid(),
+                scale(-5)
              ]);
              onKeyDown("left",()=>{
                 ball.move(-speed,0);
