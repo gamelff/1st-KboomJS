@@ -1,28 +1,24 @@
 <!doctype html>
 <html>
-    <head>
-
-    </head>
-    <body>
-        <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
-        <script>
-         window.console.log("test");
-            kaboom();
-            debug.inspect = true;
-            loadSprite("fire","/1st-KboomJS/sprites/fire.png");
-            loadSprite("grass","/1st-KboomJS/sprites/grass.png");
-            loadSprite("ball","/1st-KboomJS/sprites/ball.png");
-            loadSprite("stone","/1st-KboomJS/sprites/stone.png");
-            const speed=350;
-             const fire = add([
-                sprite("fire"),
-                pos(0,0),
-                origin("botright"),
-                area(),
-                solid(),
-                "fire",
-             ]);
-             for (let i = 0; i < 3; i++) {
+<body>
+<script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
+<script>
+        kaboom();
+debug.inspect = true;
+loadSprite("fire","/1st-KboomJS/sprites/fire.png");
+loadSprite("grass","/1st-KboomJS/sprites/grass.png");
+loadSprite("ball","/1st-KboomJS/sprites/ball.png");
+loadSprite("stone","/1st-KboomJS/sprites/rock.png");
+const speed=350;
+const fire = add([
+    sprite("fire"),
+    pos(0,0),
+    origin("botright"),
+    area(),
+    solid(),
+    "fire",
+]);
+for (let i = 0; i < 3; i++) {
 
 const x = rand(0, width());
 const y = rand(0, height());
@@ -46,18 +42,18 @@ add([
 fire.onCollide("enemy", (enemy) => {
 	destroy(enemy);
 });
-             onKeyDown("left",()=>{
-                fire.move(-speed,0);
-             });
-             onKeyDown("right",()=>{
-                fire.move(speed,0);
-             });
-             onKeyDown("up",()=>{
-                fire.move(0,-speed);
-             });
-             onKeyDown("down",()=>{
-                fire.move(0,speed);
-             });
-        </script>
-    </body>
+onKeyDown("left",()=>{
+    fire.move(-speed,0);
+});
+onKeyDown("right",()=>{
+    fire.move(speed,0);
+});
+onKeyDown("up",()=>{
+    fire.move(0,-speed);
+});
+onKeyDown("down",()=>{
+    fire.move(0,speed);
+});
+</script>
+</body>
 </html>
