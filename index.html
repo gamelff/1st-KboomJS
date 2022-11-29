@@ -42,10 +42,10 @@ add([
 	area(),
 	// This game object also has solid(), so our player won't be able to move pass this
 	solid(),
-])
+]);
 fire.onCollide("enemy", (enemy) => {
 	destroy(enemy);
-})
+});
              onKeyDown("left",()=>{
                 fire.move(-speed,0);
              });
