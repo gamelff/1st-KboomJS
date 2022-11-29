@@ -8,6 +8,26 @@
         <script>
             kaboom();
             loadSprite("Ball","/1st-KboomJS/sprites/ball.png");
+            const speed=350;
+             const ball = add([
+                sprite("Ball"),
+                pos(0,0),
+                origin("center"),
+                area(),
+                solid()
+             ]);
+             onkeydown("left",()=>{
+                player.move(-speed,0);
+             });
+             onkeydown("right",()=>{
+                player.move(speed,0);
+             });
+             onkeydown("up",()=>{
+                player.move(0,speed);
+             });
+             onkeydown("left",()=>{
+                player.move(0,-speed);
+             });
         </script>
     </body>
 </html>
