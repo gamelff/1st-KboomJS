@@ -6,30 +6,57 @@
     <body>
         <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
         <script>
+         window.console.log("test");
             kaboom();
             debug.inspect = true;
-            loadSprite("Ball","/1st-KboomJS/sprites/ball.png");
+            loadSprite("fire","/1st-KboomJS/sprites/fire.png");
+            loadSprite("grass","/1st-KboomJS/sprites/grass.png");
+            loadSprite("ball","/1st-KboomJS/sprites/ball.png");
+            loadSprite("stone","/1st-KboomJS/sprites/stone.png");
             const speed=350;
-             const ball = add([
-                sprite("Ball"),
+             const fire = add([
+                sprite("fire"),
                 pos(0,0),
                 origin("center"),
                 area(),
                 solid(),
-                scale(0.5),
-                "ball",
+                "fire",
              ]);
+             for (let i = 0; i < 3; i++) {
+
+const x = rand(0, width());
+const y = rand(0, height());
+
+add([
+   sprite("grass"),
+   pos(x, y),
+   // Both objects must have area() component to enable collision detection between
+   area(),
+   "enemy",
+]);
+
+}
+add([
+	sprite("stone"),
+	pos(center()),
+	area(),
+	// This game object also has solid(), so our player won't be able to move pass this
+	solid(),
+])
+fire.onCollide("enemy", (enemy) => {
+	destroy(enemy);
+})
              onKeyDown("left",()=>{
-                ball.move(-speed,0);
+                fire.move(-speed,0);
              });
              onKeyDown("right",()=>{
-                ball.move(speed,0);
+                fire.move(speed,0);
              });
              onKeyDown("up",()=>{
-                ball.move(0,-speed);
+                fire.move(0,-speed);
              });
              onKeyDown("down",()=>{
-                ball.move(0,speed);
+                fire.move(0,speed);
              });
         </script>
     </body>
