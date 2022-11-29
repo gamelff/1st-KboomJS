@@ -4,12 +4,12 @@
 <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
 <script>
         kaboom();
-        
 debug.inspect = true;
+
 loadSprite("fire","/1st-KboomJS/sprites/fire.png");
 loadSprite("grass","/1st-KboomJS/sprites/grass.png");
 loadSprite("ball","/1st-KboomJS/sprites/ball.png");
-loadSprite("rock","/1st-KboomJS/sprites/rock.png");
+loadSprite("rock","/1st-KboomJS/sprites/rock1.png");
 const speed=350;
 
 const fire = add([
@@ -22,8 +22,8 @@ const fire = add([
 ]);
 for (let i = 0; i < 3; i++) {
 
-const x = rand(0, width());
-const y = rand(0, height());
+let x = rand(0, width());
+let y = rand(0, height());
 
 add([
    sprite("grass"),
@@ -32,8 +32,8 @@ add([
    area(),
    "enemy",
 ]);
+};
 
-}
 add([
 	sprite("rock"),
 	pos(center()),
@@ -41,9 +41,11 @@ add([
 	// This game object also has solid(), so our player won't be able to move pass this
 	solid(),
 ]);
+console.log("1");
 fire.onCollide("enemy", (enemy) => {
 	destroy(enemy);
 });
+console.log("2");
 onKeyDown("left",()=>{
     fire.move(-speed,0);
 });
@@ -56,6 +58,7 @@ onKeyDown("up",()=>{
 onKeyDown("down",()=>{
     fire.move(0,speed);
 });
+console.log("3");
 </script>
 </body>
 </html>
