@@ -4,12 +4,14 @@
 <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
 <script>
         kaboom();
+        
 debug.inspect = true;
 loadSprite("fire","/1st-KboomJS/sprites/fire.png");
 loadSprite("grass","/1st-KboomJS/sprites/grass.png");
 loadSprite("ball","/1st-KboomJS/sprites/ball.png");
-loadSprite("stone","/1st-KboomJS/sprites/rock.png");
+loadSprite("rock","/1st-KboomJS/sprites/rock.png");
 const speed=350;
+
 const fire = add([
     sprite("fire"),
     pos(0,0),
@@ -33,7 +35,7 @@ add([
 
 }
 add([
-	sprite("stone"),
+	sprite("rock"),
 	pos(center()),
 	area(),
 	// This game object also has solid(), so our player won't be able to move pass this
