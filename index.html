@@ -45,9 +45,9 @@ add([
 	// This game object also has solid(), so our player won't be able to move pass this
 	solid(),
 ]);
-console.log("1");
 fire.onCollide("enemy", (enemy) => {
 	destroy(enemy);
+    ++coins;
 });
 console.log("2");
 onKeyDown("left",()=>{
