@@ -5,7 +5,7 @@
 <script>
         kaboom();
 debug.inspect = true;
-
+let coins;
 loadSprite("fire","/1st-KboomJS/sprites/fire.png");
 loadSprite("grass","/1st-KboomJS/sprites/grass.png");
 loadSprite("ball","/1st-KboomJS/sprites/ball.png");
@@ -19,9 +19,8 @@ const fire = add([
     solid(),
     "fire",
 ]);
-for (let i = 0; i < 3; i++) {
-
-let x = rand(0, width());
+function addGrass(){
+    let x = rand(0, width());
 let y = rand(0, height());
 
 add([
@@ -31,6 +30,11 @@ add([
    area(),
    "enemy",
 ]);
+}
+for (let i = 0; i < 3; i++) {
+
+addGrass();
+
 };
 
 add([
