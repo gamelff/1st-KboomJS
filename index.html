@@ -36,7 +36,22 @@ for (let i = 0; i < 3; i++) {
 addGrass();
 
 };
-
+add([
+	rect(width(), 48),
+	outline(4),
+	area(),
+	pos(0, height() - 48),
+	// Give objects a solid() component if you don't want other solid objects pass through
+	solid(),
+])
+add([
+	rect(48, height()),
+	outline(4),
+	area(),
+	pos(width() - 48, 0),
+	// Give objects a solid() component if you don't want other solid objects pass through
+	solid(),
+])
 add([
 	sprite("rock"),
 	pos(center()),
