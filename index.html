@@ -48,6 +48,7 @@ add([
 fire.onCollide("enemy", (enemy) => {
 	destroy(enemy);
     ++coins;
+    addGrass();
 });
 console.log("2");
 onKeyDown("left",()=>{
