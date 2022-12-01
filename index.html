@@ -58,7 +58,8 @@ add([
 	rect(width(), 48),
 	outline(4),
 	area(),
-	pos(0, height()-1),
+	pos(0, height()),
+    origin("center"),
 	// Give objects a solid() component if you don't want other solid objects pass through
 	solid(),
     "wall"
@@ -67,7 +68,8 @@ add([
 	rect(48, height()),
 	outline(4),
 	area(),
-	pos(width()-1, 0),
+	pos(width(), 0),
+    origin("center"),
 	// Give objects a solid() component if you don't want other solid objects pass through
 	solid(),
     "wall"
