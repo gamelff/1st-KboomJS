@@ -38,25 +38,25 @@ addGrass();
 
 };
 add([
-	rect(width(), 48),
+	rect(width(), 1),
 	outline(4),
 	area(),
-	pos(0, height() - 48),
+	pos(0, height() - 1),
 	// Give objects a solid() component if you don't want other solid objects pass through
 	solid(),
     "wall"
 ]);
 add([
-	rect(48, height()),
+	rect(1, height()),
 	outline(4),
 	area(),
-	pos(width() - 48, 0),
+	pos(width() - 1, 0),
 	// Give objects a solid() component if you don't want other solid objects pass through
 	solid(),
     "wall"
 ]);
 add([
-	rect(48, height()),
+	rect(1, height()),
 	outline(4),
 	area(),
 	pos(0, 0),
@@ -66,7 +66,7 @@ add([
     "wall"
 ]);
 add([
-	rect(width(), 48),
+	rect(width(), 1),
 	outline(4),
 	area(),
 	pos(width(), 0),
